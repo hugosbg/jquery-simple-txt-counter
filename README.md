@@ -11,6 +11,18 @@ npm install jquery-simple-txt-counter
 ### Usage
 
 ```javascript
+import 'jquery-simple-txt-counter/jquery-simple-txt-counter';
+```
+
+or
+
+```html
+<script src="jquery-simple-txt-counter/jquery-simple-txt-counter.js">
+```
+
+and
+
+```javascript
 $('textarea').simpleTxtCounter({
     maxLength: 100,
     countText: 'Maximum',

@@ -37,7 +37,7 @@
             const max = parseInt(input.attr('maxlength') || settings.maxLength);
             const uniqueId = Math.floor((Math.random() * 25) + Date.now());
 
-            count(input, 0, max, uniqueId);
+            count(input, this.value.length, max, uniqueId);
 
             input.on('input', function () {
                 count(input, this.value.length, max, uniqueId);
