@@ -17,7 +17,7 @@ import 'jquery-simple-txt-counter/jquery-simple-txt-counter';
 or
 
 ```html
-<script src="jquery-simple-txt-counter/jquery-simple-txt-counter.js">
+<script src="jquery-simple-txt-counter/jquery-simple-txt-counter.js"></script>
 ```
 
 and
@@ -25,7 +25,7 @@ and
 ```javascript
 $('textarea').simpleTxtCounter({
     maxLength: 100,
-    countText: 'Maximum',
+    countText: 'Maximum:',
     countElem: '<div class="form-text"></div>',
     lineBreak: false,
 });
