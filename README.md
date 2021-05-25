@@ -31,10 +31,29 @@ $('textarea').simpleTxtCounter({
 });
 ```
 
+### Example
+
+* With customized insert  
+
+```html
+<div class="btn-group">
+    <textarea class="form-control" name="note" rows="5" maxlength="200"></textarea>
+    <button type="button" class="btn btn-secondary">+ ADD</button>
+</div>
+```
+
+```javascript
+$('textarea').simpleTxtCounter({
+    after: '.btn-group',
+    countElem: '<div class="form-text"></div>',
+});
+```
+
 ### Options
 
 | Option    | Default   | Description                                               |
 | --------- |:---------:| --------------------------------------------------------- |
+| after     | undefined | selector to after inserting the counter element           |
 | maxLength | undefined | Maximum size (`maxlength` attribute is used if it exists) |
 | countText | undefined | Pre text before counter                                   |
 | countElem | `<div/>`  | Counter element                                           |

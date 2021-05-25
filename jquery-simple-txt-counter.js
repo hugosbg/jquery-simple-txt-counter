@@ -3,12 +3,13 @@
  *
  * @homepage https://github.com/hugosbg/jquery-simple-txt-counter#readme
  * @author Hugo Gomes <hugo.msn@msn.com>
- * @version 0.0.3
+ * @version 0.1.3
  * @license MIT
  */
-; (function ($) {
+;(function ($) {
     $.fn.simpleTxtCounter = function (options) {
         const settings = $.extend({
+            after: undefined,
             maxLength: undefined,
             countText: undefined,
             countElem: '<div/>',
@@ -17,7 +18,7 @@
 
         const count = (input, length, max, uniqueId) => {
             const elem = $(`#${uniqueId}`);
-            const { countText, countElem } = settings;
+            const { after, countText, countElem } = settings;
 
             let count = countText ? `${countText} ${length}` : length;
             if (max) {
@@ -26,7 +27,12 @@
 
             if (elem.length === 0) {
                 const wrap = $(countElem).attr('id', uniqueId).text(count);
-                input.after(wrap);
+                const parent = input.closest(after);
+                if (parent.length) {
+                    parent.after(wrap);
+                } else {
+                    input.after(wrap);
+                }
             } else {
                 elem.text(count);
             }
