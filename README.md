@@ -37,8 +37,8 @@ $('textarea').simpleTxtCounter({
 
 ```html
 <div class="btn-group">
-    <textarea class="form-control" name="note" rows="5" maxlength="200"></textarea>
-    <button type="button" class="btn btn-secondary">+ ADD</button>
+    <textarea maxlength="200"></textarea>
+    <button type="button">+ ADD</button>
 </div>
 ```
 
