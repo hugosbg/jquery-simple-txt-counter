@@ -3,7 +3,7 @@
  *
  * @homepage https://github.com/hugosbg/jquery-simple-txt-counter#readme
  * @author Hugo Gomes <hugo.msn@msn.com>
- * @version 0.1.3
+ * @version 0.1.4
  * @license MIT
  */
 ;(function ($) {
@@ -16,7 +16,7 @@
             lineBreak: true
         }, options);
 
-        const count = (input, length, max, uniqueId) => {
+        const counter = (input, length, max, uniqueId) => {
             const elem = $(`#${uniqueId}`);
             const { after, countText, countElem } = settings;
 
@@ -41,12 +41,12 @@
         return this.each(function (key) {
             const input = $(this);
             const max = parseInt(input.attr('maxlength') || settings.maxLength);
-            const uniqueId = `simple-txt-counter-${Date.now() + key}`;
+            const uniqueId = `simple-txt-counter-${key}`;
 
-            count(input, this.value.length, max, uniqueId);
+            counter(input, this.value.length, max, uniqueId);
 
             input.on('input', function () {
-                count(input, this.value.length, max, uniqueId);
+                counter(input, this.value.length, max, uniqueId);
 
                 if (this.value && max) {
                     if (settings.lineBreak === false) {
@@ -56,8 +56,8 @@
                     }
                 }
             }).on('keypress', function (event) {
-                const key = event.which || event.keyCode;
-                if (settings.lineBreak === false && key === 13) {
+                const keyCode = event.which || event.keyCode;
+                if (settings.lineBreak === false && keyCode === 13) {
                     event.preventDefault();
                     return false;
                 }
