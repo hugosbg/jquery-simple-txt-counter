@@ -3,7 +3,7 @@
  *
  * @homepage https://github.com/hugosbg/jquery-simple-txt-counter#readme
  * @author Hugo Gomes <hugo.msn@msn.com>
- * @version 0.1.5
+ * @version 0.1.6
  * @license MIT
  */
 ;(function ($) {
@@ -18,7 +18,6 @@
 
         const counter = (input, length, max, uniqueId) => {
             const { after, countText, countElem } = settings;
-            let elem = $(`#${uniqueId}`);
             let count = countText ? `${countText} ${length}` : length;
             if (max) {
                 count += ` / ${max}`;
@@ -28,20 +27,15 @@
             const parent = input.closest(after);
 
             if (parent.length) {
-                elem = parent.next('[id^=simple-txt-counter]');
-
+                let elem = parent.next('[id^=simple-txt-counter]');
                 if (elem.length) {
                     elem.text(count);
                 } else {
                     parent.after(wrap);
                 }
 
-            } else if (elem.length) {
-                elem.text(count);
-
             } else {
-                elem = input.next('[id^=simple-txt-counter]');
-
+                let elem = input.next('[id^=simple-txt-counter]');
                 if (elem.length) {
                     elem.text(count);
                 } else {

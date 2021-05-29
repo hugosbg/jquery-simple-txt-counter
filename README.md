@@ -38,14 +38,13 @@ $('textarea').simpleTxtCounter({
 ```html
 <div class="btn-group">
     <textarea maxlength="200"></textarea>
-    <button type="button">+ ADD</button>
+    <button type="button">ADD</button>
 </div>
 ```
 
 ```javascript
 $('textarea').simpleTxtCounter({
-    after: '.btn-group',
-    countElem: '<div class="form-text"></div>',
+    after: '.btn-group'
 });
 ```
 
