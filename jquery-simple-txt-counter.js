@@ -12,15 +12,16 @@
             after: undefined,
             maxLength: undefined,
             countText: undefined,
+            countTextAfter: undefined,
             countElem: '<div/>',
             lineBreak: true
         }, options);
 
         const counter = (input, length, max, uniqueId) => {
-            const { after, countText, countElem } = settings;
-            let count = countText ? `${countText} ${length}` : length;
+            const { after, countText, countTextAfter, countElem } = settings;
+            let count = countText ? `${countText} ${length}` : length ;
             if (max) {
-                count += ` / ${max}`;
+                count += ` / ${max} ${countTextAfter}`;
             }
 
             const wrap = $(countElem).attr('id', uniqueId).text(count);
