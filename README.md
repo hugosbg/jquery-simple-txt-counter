@@ -26,8 +26,24 @@ and
 $('textarea').simpleTxtCounter({
     maxLength: 100,
     countText: 'Maximum:',
+    countTextAfter: ' (min 15)',
     countElem: '<div class="form-text"></div>',
     lineBreak: false,
+});
+```
+
+also, add function to change text color based on "minlength" of textarea
+
+```javascript
+$('textarea').keyup(function () {
+    min = this.getAttribute("minlength");
+    var len = $(this).val().length;
+    if (len >= min) {
+        $('#simple-txt-counter-0').attr('style', 'color:inherit');
+    } 
+    else {
+        $('#simple-txt-counter-0').attr('style', 'color:red');
+    }
 });
 ```
 
@@ -37,7 +53,7 @@ $('textarea').simpleTxtCounter({
 
 ```html
 <div class="btn-group">
-    <textarea maxlength="200"></textarea>
+    <textarea minlength="15" maxlength="200"></textarea>
     <button type="button">ADD</button>
 </div>
 ```
