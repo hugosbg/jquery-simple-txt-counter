@@ -1,9 +1,10 @@
 {
   "name": "jquery-simple-txt-counter",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "jQuery Simple Text Counter",
   "author": "Hugo Gomes <hugo.msn@msn.com>",
   "license": "MIT",
+  "main": "jquery-simple-txt-counter.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hugosbg/jquery-simple-txt-counter.git"
